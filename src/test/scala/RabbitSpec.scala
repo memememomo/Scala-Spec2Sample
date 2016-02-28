@@ -8,5 +8,10 @@ class RabbitSpec extends Specification {
       val rabbit = new Rabbit("月野うさぎ")
       rabbit.jump must_== "月野うさぎ jumped!"
     }
+
+    "話すことができない" in {
+      val rabbit = new Rabbit("月野うさぎ")
+      rabbit.talk must throwAn[UnsupportedOperationException]
+    }
   }
 }
